@@ -88,6 +88,15 @@ var calculatorModule = (function(){
    * @param  { Number } x
    */
 
+  function divide(operand) {
+    if (typeof operand === "number") {
+      total /= operand;
+    }
+    else if (typeof operand !== "number") {
+      throw new Error("Only numbers can be loaded into memory.");
+    }
+  }
+
 
   /**
    * Return the value stored at `memory`
@@ -115,7 +124,8 @@ var calculatorModule = (function(){
     getTotal,
     add,
     subtract,
-    multiply
+    multiply,
+    divide
 
   };
 
