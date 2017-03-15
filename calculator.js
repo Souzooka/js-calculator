@@ -58,6 +58,16 @@ var calculatorModule = (function(){
    */
 
 
+  function subtract(operand) {
+    if (typeof operand === "number") {
+      total -= operand;
+    }
+    else if (typeof operand !== "number") {
+      throw new Error("Only numbers can be loaded into memory.");
+    }
+  }
+
+
   /**
    * Multiplies the value by `total`
    * @param  { Number } x
@@ -94,7 +104,8 @@ var calculatorModule = (function(){
   return {
     load,
     getTotal,
-    add
+    add,
+    subtract
 
   };
 
