@@ -19,10 +19,10 @@ var calculatorModule = (function(){
 
   function load(newTotal) {
     if (_isNumber(newTotal)) {
-      total = newTotal;
+      _total = newTotal;
     }
 
-    return total;
+    return _total;
   }
 
   /**
@@ -31,7 +31,7 @@ var calculatorModule = (function(){
    */
 
   function getTotal() {
-    return total;
+    return _total;
   }
 
   /**
@@ -41,7 +41,7 @@ var calculatorModule = (function(){
 
   function add(operand) {
     if (_isNumber(operand)) {
-      total += operand;
+      _total += operand;
     }
   }
 
@@ -52,7 +52,7 @@ var calculatorModule = (function(){
 
   function subtract(operand) {
     if (_isNumber(operand)) {
-      total -= operand;
+      _total -= operand;
     }
   }
 
@@ -63,7 +63,7 @@ var calculatorModule = (function(){
 
   function multiply(operand) {
     if (_isNumber(operand)) {
-      total *= operand;
+      _total *= operand;
     }
   }
 
@@ -74,7 +74,7 @@ var calculatorModule = (function(){
 
   function divide(operand) {
     if (_isNumber(operand)) {
-      total /= operand;
+      _total /= operand;
     }
   }
 
@@ -84,7 +84,7 @@ var calculatorModule = (function(){
    */
 
   function recallMemory() {
-    return memory;
+    return _memory;
   }
 
   /**
@@ -92,7 +92,7 @@ var calculatorModule = (function(){
    */
 
   function saveMemory() {
-    memory = total;
+    _memory = _total;
   }
 
   /**
@@ -100,7 +100,7 @@ var calculatorModule = (function(){
    */
 
   function clearMemory() {
-    memory = 0;
+    _memory = 0;
   }
 
   /**
@@ -127,5 +127,8 @@ var calculatorModule = (function(){
   };
 
 
-});
+})();
 
+module.exports = {
+  calculatorModule
+};
