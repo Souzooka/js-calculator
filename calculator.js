@@ -107,11 +107,11 @@ var calculatorModule = (function(){
    * Validation
    */
 
-  function _isNumber(testValue, suppress) {
+  function _isNumber(testValue, dontSuppress) {
     if (typeof testValue === "number") {
       return true;
     }
-    else if (!suppress && typeof testValue !== "number") {
+    else if (!dontSuppress && typeof testValue !== "number") {
       throw new Error("Only numbers can be loaded into memory.");
     }
   }
