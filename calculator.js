@@ -17,6 +17,10 @@ var calculatorModule = (function(){
    * @return { Number }    current total
    */
 
+  function load(newTotal) {
+    this.total = newTotal;
+  }
+
 
   /**
    * Return the value of `total`
@@ -70,7 +74,7 @@ var calculatorModule = (function(){
 
 
 return {
-
+  load,
 
 };
 
