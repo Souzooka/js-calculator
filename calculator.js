@@ -73,6 +73,15 @@ var calculatorModule = (function(){
    * @param  { Number } x
    */
 
+  function multiply(operand) {
+    if (typeof operand === "number") {
+      total *= operand;
+    }
+    else if (typeof operand !== "number") {
+      throw new Error("Only numbers can be loaded into memory.");
+    }
+  }
+
 
   /**
    * Divides the value passing in by `total`
@@ -105,7 +114,8 @@ var calculatorModule = (function(){
     load,
     getTotal,
     add,
-    subtract
+    subtract,
+    multiply
 
   };
 
