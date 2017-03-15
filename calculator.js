@@ -106,6 +106,9 @@ var calculatorModule = (function(){
    * Stores the value of `total` to `memory`
    */
 
+  function saveMemory() {
+    memory = total;
+  }
 
   /**
    * Clear the value stored at `memory`
@@ -124,7 +127,8 @@ var calculatorModule = (function(){
     subtract,
     multiply,
     divide,
-    recallMemory
+    recallMemory,
+    saveMemory
 
   };
 
