@@ -18,9 +18,15 @@ var calculatorModule = (function(){
    */
 
   function load(newTotal) {
-    this.total = newTotal;
-  }
+    if (typeof newTotal === "number") {
+      total = newTotal;
+    }
+    else if (typeof newTotal !== "number") {
+      throw new Error("Only numbers can be loaded into memory.");
+    }
 
+    return total;
+  }
 
   /**
    * Return the value of `total`
@@ -73,10 +79,10 @@ var calculatorModule = (function(){
 
 
 
-return {
-  load,
+  return {
+    load,
 
-};
+  };
 
 
 });
