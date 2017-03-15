@@ -17,12 +17,18 @@ var calculatorModule = (function(){
    * @return { Number }    current total
    */
 
-  function load(newTotal) {
-    if (typeof newTotal === "number") {
-      total = newTotal;
+  function _isNumber(testValue) {
+    if (typeof testValue === "number") {
+      return true;
     }
-    else if (typeof newTotal !== "number") {
+    else if (typeof testValue !== "number") {
       throw new Error("Only numbers can be loaded into memory.");
+    }
+  }
+
+  function load(newTotal) {
+    if (_isNumber(newTotal)) {
+      total = newTotal;
     }
 
     return total;
@@ -43,11 +49,8 @@ var calculatorModule = (function(){
    */
 
   function add(operand) {
-    if (typeof operand === "number") {
+    if (_isNumber(operand)) {
       total += operand;
-    }
-    else if (typeof operand !== "number") {
-      throw new Error("Only numbers can be loaded into memory.");
     }
   }
 
@@ -57,11 +60,8 @@ var calculatorModule = (function(){
    */
 
   function subtract(operand) {
-    if (typeof operand === "number") {
+    if (_isNumber(operand)) {
       total -= operand;
-    }
-    else if (typeof operand !== "number") {
-      throw new Error("Only numbers can be loaded into memory.");
     }
   }
 
@@ -71,11 +71,8 @@ var calculatorModule = (function(){
    */
 
   function multiply(operand) {
-    if (typeof operand === "number") {
+    if (_isNumber(operand)) {
       total *= operand;
-    }
-    else if (typeof operand !== "number") {
-      throw new Error("Only numbers can be loaded into memory.");
     }
   }
 
@@ -85,11 +82,8 @@ var calculatorModule = (function(){
    */
 
   function divide(operand) {
-    if (typeof operand === "number") {
+    if (_isNumber(operand)) {
       total /= operand;
-    }
-    else if (typeof operand !== "number") {
-      throw new Error("Only numbers can be loaded into memory.");
     }
   }
 
