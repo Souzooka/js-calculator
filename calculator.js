@@ -114,6 +114,10 @@ var calculatorModule = (function(){
    * Clear the value stored at `memory`
    */
 
+  function clearMemory() {
+    memory = 0;
+  }
+
   /**
    * Validation
    */
@@ -128,8 +132,8 @@ var calculatorModule = (function(){
     multiply,
     divide,
     recallMemory,
-    saveMemory
-
+    saveMemory,
+    clearMemory
   };
 
 
