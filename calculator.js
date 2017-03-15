@@ -17,15 +17,6 @@ var calculatorModule = (function(){
    * @return { Number }    current total
    */
 
-  function _isNumber(testValue) {
-    if (typeof testValue === "number") {
-      return true;
-    }
-    else if (typeof testValue !== "number") {
-      throw new Error("Only numbers can be loaded into memory.");
-    }
-  }
-
   function load(newTotal) {
     if (_isNumber(newTotal)) {
       total = newTotal;
@@ -116,7 +107,14 @@ var calculatorModule = (function(){
    * Validation
    */
 
-
+  function _isNumber(testValue) {
+    if (typeof testValue === "number") {
+      return true;
+    }
+    else if (typeof testValue !== "number") {
+      throw new Error("Only numbers can be loaded into memory.");
+    }
+  }
 
   return {
     load,
