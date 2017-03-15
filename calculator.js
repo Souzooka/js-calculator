@@ -33,6 +33,10 @@ var calculatorModule = (function(){
    * @return { Number }
    */
 
+  function getTotal() {
+    return total;
+  }
+
 
   /**
    * Sums the value passed in with `total`
@@ -81,6 +85,7 @@ var calculatorModule = (function(){
 
   return {
     load,
+    getTotal
 
   };
 
