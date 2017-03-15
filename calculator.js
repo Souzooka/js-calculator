@@ -107,7 +107,7 @@ var calculatorModule = (function(){
    * Validation
    */
 
-  function _isNumber(testValue, dontSuppress) {
+  function _isNumber(testValue) {
     if (typeof testValue === "number") {
       return true;
     }
