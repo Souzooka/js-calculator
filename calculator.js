@@ -8,8 +8,8 @@
 
 var calculatorModule = (function(){
 
-  var memory = 0;
-  var total = 0;
+  var _memory = 0;
+  var _total = 0;
 
   /**
    * sets the `total` to the number passed in
@@ -111,9 +111,7 @@ var calculatorModule = (function(){
     if (typeof testValue === "number") {
       return true;
     }
-    else if (!dontSuppress && typeof testValue !== "number") {
-      throw new Error("Only numbers can be loaded into memory.");
-    }
+    throw new Error("Only numbers can be loaded into memory.");
   }
 
   return {
