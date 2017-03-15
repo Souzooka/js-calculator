@@ -37,7 +37,6 @@ var calculatorModule = (function(){
     return total;
   }
 
-
   /**
    * Sums the value passed in with `total`
    * @param { Number } x
@@ -57,7 +56,6 @@ var calculatorModule = (function(){
    * @param  { Number } x
    */
 
-
   function subtract(operand) {
     if (typeof operand === "number") {
       total -= operand;
@@ -66,7 +64,6 @@ var calculatorModule = (function(){
       throw new Error("Only numbers can be loaded into memory.");
     }
   }
-
 
   /**
    * Multiplies the value by `total`
@@ -82,7 +79,6 @@ var calculatorModule = (function(){
     }
   }
 
-
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
@@ -97,12 +93,14 @@ var calculatorModule = (function(){
     }
   }
 
-
   /**
    * Return the value stored at `memory`
    * @return { Number }
    */
 
+  function recallMemory() {
+    return memory;
+  }
 
   /**
    * Stores the value of `total` to `memory`
@@ -125,7 +123,8 @@ var calculatorModule = (function(){
     add,
     subtract,
     multiply,
-    divide
+    divide,
+    recallMemory
 
   };
 
