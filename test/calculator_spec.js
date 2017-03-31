@@ -123,6 +123,12 @@ describe('calculatorModule', () => {
       expect(calculatorObj.multiply).to.be.a('function');
     });
 
+    it ('should multiply the arugment and total and store result in total', () => {
+      calculatorObj.load(2);
+      calculatorObj.multiply(5);
+      expect(calculatorObj.getTotal()).to.be.equal(10);
+    });
+
   });
 
   // define a `describe` block to test the `divide` method and all these tests go INSIDE of this describe
@@ -135,6 +141,12 @@ describe('calculatorModule', () => {
 
     it ('should be a method', () => {
       expect(calculatorObj.divide).to.be.a('function');
+    });
+
+    it ('should divide the total by the argument and store result in total', () => {
+      calculatorObj.load(6);
+      calculatorObj.divide(2);
+      expect(calculatorObj.getTotal()).to.be.equal(3);
     });
 
   });

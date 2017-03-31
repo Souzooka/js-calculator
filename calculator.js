@@ -52,12 +52,18 @@ function calculatorModule() {
    * @param  { Number } x
    */
 
+  function multiply(num) {
+    _total *= num;
+  }
 
   /**
    * Divides the value passing in by `total`
    * @param  { Number } x
    */
 
+  function divide(num) {
+    _total /= num;
+  }
 
   /**
    * Return the value stored at `memory`
@@ -82,7 +88,9 @@ function calculatorModule() {
     load,
     getTotal,
     add,
-    subtract
+    subtract,
+    multiply,
+    divide
   };
 
 }
