@@ -34,12 +34,18 @@ function calculatorModule() {
    * @param { Number } x
    */
 
+  function add(num) {
+    _total += num;
+  }
 
   /**
    * Subtracts the value passed in from `total`
    * @param  { Number } x
    */
 
+  function subtract(num) {
+    _total -= num;
+  }
 
   /**
    * Multiplies the value by `total`
@@ -75,6 +81,8 @@ function calculatorModule() {
   return {
     load,
     getTotal,
+    add,
+    subtract
   };
 
 }

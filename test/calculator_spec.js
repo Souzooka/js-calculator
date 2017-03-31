@@ -30,6 +30,10 @@ describe('calculatorModule', () => {
    * each method should have it's own `describe` block
    */
 
+  beforeEach(() => {
+    calculatorObj.load(0);
+  });
+
   // define a `describe` block to test the `load` method and all these tests go INSIDE of this describe
 
   describe('load method', () => {
@@ -80,6 +84,12 @@ describe('calculatorModule', () => {
       expect(calculatorObj.add).to.be.a('function');
     });
 
+    it ('should add the argument and total and store result in total', () => {
+      calculatorObj.add(9);
+      calculatorObj.add(3);
+      expect(calculatorObj.getTotal()).to.be.equal(12);
+    });
+
   });
 
   // define a `describe` block to test the `subtract` method and all these tests go INSIDE of this describe
@@ -92,6 +102,11 @@ describe('calculatorModule', () => {
 
     it ('should be a method', () => {
       expect(calculatorObj.subtract).to.be.a('function');
+    });
+
+    it ('should subtract the argument from total and store result in total', () => {
+      calculatorObj.subtract(5);
+      expect(calculatorObj.getTotal()).to.be.equal(-5);
     });
 
   });
