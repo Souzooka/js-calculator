@@ -6,6 +6,9 @@
  * @return {object} `calculator` object that can be used
  */
 
+function calculatorModule() {
+  var _total = 0;
+  var _memory = 0;
 
   /**
    * sets the `total` to the number passed in
@@ -63,3 +66,10 @@
    * Validation
    */
 
+   return {
+
+   };
+
+}
+
+module.exports = calculatorModule;

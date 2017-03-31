@@ -42,6 +42,10 @@ describe('calculatorModule', () => {
       expect(calculatorObj.load).to.be.a('function');
     });
 
+    it('should set total to the number passed in', () => {
+
+    });
+
   });
 
   // define a `describe` block to test the `getTotal` method and all these tests go INSIDE of this describe
