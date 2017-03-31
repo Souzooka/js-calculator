@@ -43,7 +43,8 @@ describe('calculatorModule', () => {
     });
 
     it('should set total to the number passed in', () => {
-
+      calculatorObj.load(7);
+      expect(calculatorObj.getTotal()).to.be.equal(7);
     });
 
   });
@@ -58,6 +59,11 @@ describe('calculatorModule', () => {
 
     it ('should be a method', () => {
       expect(calculatorObj.getTotal).to.be.a('function');
+    });
+
+    it('should retrieve total variable', () => {
+      calculatorObj.load(9);
+      expect(calculatorObj.getTotal()).to.be.equal(9);
     });
 
   });
