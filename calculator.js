@@ -17,6 +17,7 @@ function calculatorModule() {
    */
 
   function load(num) {
+    isNumber(num);
     _total = num;
   }
 
@@ -25,7 +26,7 @@ function calculatorModule() {
    * @return { Number }
    */
 
-  function getTotal(num) {
+  function getTotal() {
     return _total;
   }
 
@@ -35,6 +36,7 @@ function calculatorModule() {
    */
 
   function add(num) {
+    isNumber(num);
     _total += num;
   }
 
@@ -44,6 +46,7 @@ function calculatorModule() {
    */
 
   function subtract(num) {
+    isNumber(num);
     _total -= num;
   }
 
@@ -53,6 +56,7 @@ function calculatorModule() {
    */
 
   function multiply(num) {
+    isNumber(num);
     _total *= num;
   }
 
@@ -62,6 +66,7 @@ function calculatorModule() {
    */
 
   function divide(num) {
+    isNumber(num);
     _total /= num;
   }
 
@@ -94,6 +99,12 @@ function calculatorModule() {
   /**
    * Validation
    */
+
+  function isNumber(numImposter) {
+    if (typeof numImposter !== 'number') {
+      throw new Error('Only numbers can be accepted!');
+    }
+  }
 
   return {
     load,

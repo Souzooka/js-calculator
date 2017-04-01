@@ -230,8 +230,8 @@ describe('calculatorModule', () => {
 
     describe('add method', () => {
 
-      it ('should be returned by calculatorModule', () => {
-        expect(calculatorObj.add.bind(null, "hello")).to.have.ownProperty('add');
+      it ('should only accept numbers', () => {
+        expect(calculatorObj.add.bind(null, "hello")).to.throw(Error);
       });
 
     });
@@ -240,8 +240,8 @@ describe('calculatorModule', () => {
 
     describe('subtract method', () => {
 
-      it ('should be returned by calculatorModule', () => {
-        expect(calculatorObj.subtract.bind(null, "hello")).to.have.ownProperty('subtract');
+      it ('should only accept numbers', () => {
+        expect(calculatorObj.subtract.bind(null, "hello")).to.throw(Error);
       });
 
     });
@@ -250,8 +250,8 @@ describe('calculatorModule', () => {
 
     describe('multiply method', () => {
 
-      it ('should be returned by calculatorModule', () => {
-        expect(calculatorObj.multiply.bind(null, "hello")).to.have.ownProperty('multiply');
+      it ('should only accept numbers', () => {
+        expect(calculatorObj.multiply.bind(null, "hello")).to.throw(Error);
       });
 
     });
@@ -260,8 +260,8 @@ describe('calculatorModule', () => {
 
     describe('divide method', () => {
 
-      it ('should be returned by calculatorModule', () => {
-        expect(calculatorObj.divide.bind(null, "hello")).to.have.ownProperty('divide');
+      it ('should only accept numbers', () => {
+        expect(calculatorObj.divide.bind(null, "hello")).to.throw(Error);
       });
 
     });
