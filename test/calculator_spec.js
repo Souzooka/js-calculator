@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // import dependencies e.g. chai and the calculator module
 var chai = require('chai');
 var calculator = require('../calculator.js');
@@ -217,4 +218,52 @@ describe('calculatorModule', () => {
 
   // define a `describe` block to test the `validation` features of your methods and all these tests go INSIDE of this describe
 
+  describe('validation', () => {
+
+    describe('load method', () => {
+
+      it ('should only accept numbers', () => {
+        expect(calculatorObj.load.bind(null, "hello")).to.throw(Error);
+      });
+
+    });
+
+    describe('add method', () => {
+
+      it ('should be returned by calculatorModule', () => {
+        expect(calculatorObj.add.bind(null, "hello")).to.have.ownProperty('add');
+      });
+
+    });
+
+  // define a `describe` block to test the `subtract` method and all these tests go INSIDE of this describe
+
+    describe('subtract method', () => {
+
+      it ('should be returned by calculatorModule', () => {
+        expect(calculatorObj.subtract.bind(null, "hello")).to.have.ownProperty('subtract');
+      });
+
+    });
+
+  // define a `describe` block to test the `multiply` method and all these tests go INSIDE of this describe
+
+    describe('multiply method', () => {
+
+      it ('should be returned by calculatorModule', () => {
+        expect(calculatorObj.multiply.bind(null, "hello")).to.have.ownProperty('multiply');
+      });
+
+    });
+
+  // define a `describe` block to test the `divide` method and all these tests go INSIDE of this describe
+
+    describe('divide method', () => {
+
+      it ('should be returned by calculatorModule', () => {
+        expect(calculatorObj.divide.bind(null, "hello")).to.have.ownProperty('divide');
+      });
+
+    });
+  });
 });
