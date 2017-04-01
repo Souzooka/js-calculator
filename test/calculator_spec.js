@@ -32,6 +32,7 @@ describe('calculatorModule', () => {
 
   beforeEach(() => {
     calculatorObj.load(0);
+    calculatorObj.clearMemory();
   });
 
   // define a `describe` block to test the `load` method and all these tests go INSIDE of this describe
@@ -163,6 +164,10 @@ describe('calculatorModule', () => {
       expect(calculatorObj.recallMemory).to.be.a('function');
     });
 
+    it ('should return the memory of the calculator', () => {
+      expect(calculatorObj.recallMemory()).to.be.equal(0);
+    });
+
   });
 
   // define a `describe` block to test the `saveMemory` method and all these tests go INSIDE of this describe
@@ -177,6 +182,12 @@ describe('calculatorModule', () => {
       expect(calculatorObj.saveMemory).to.be.a('function');
     });
 
+    it ('should store the value of _total into _memory', () => {
+      calculatorObj.load(9);
+      calculatorObj.saveMemory();
+      expect(calculatorObj.recallMemory()).to.be.equal(9);
+    });
+
   });
 
   // define a `describe` block to test the `clearMemory` method and all these tests go INSIDE of this describe
@@ -189,6 +200,13 @@ describe('calculatorModule', () => {
 
     it ('should be a method', () => {
       expect(calculatorObj.clearMemory).to.be.a('function');
+    });
+
+    it('should reset memory to 0 when invoked', () => {
+      calculatorObj.load(9);
+      calculatorObj.saveMemory();
+      calculatorObj.clearMemory();
+      expect(calculatorObj.recallMemory()).to.be.equal(0);
     });
 
   });
